@@ -244,8 +244,8 @@ const LovItemPage = () => {
                                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                                     className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                 >
-                                    <option value="VEGETABLES">VEGETABLES</option>
-                                    <option value="OTHERS">OTHERS</option>
+                                    <option value="VEGETABLE">VEGETABLE</option>
+                                    <option value="OTHER">OTHER</option>
                                 </select>
                             </div>
                             <div>
