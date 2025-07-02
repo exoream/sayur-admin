@@ -30,7 +30,7 @@ const DashboardPage = () => {
                         </div>
                         <div>
                             <h1 className="text-xl font-bold text-gray-800">Admin Panel</h1>
-                            <p className="text-xs text-gray-500">Management System</p>
+                            <p className="text-xs text-gray-500">Sistem Management</p>
                         </div>
                     </div>
                 </div>
@@ -38,16 +38,7 @@ const DashboardPage = () => {
                 {/* Navigation Tabs */}
                 <DashboardTabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
-                {/* Decorative Element */}
-                <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg p-4 text-white">
-                        <div className="text-sm font-medium mb-1">System Status</div>
-                        <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                            <span className="text-xs opacity-90">All systems operational</span>
-                        </div>
-                    </div>
-                </div>
+
             </aside>
 
             {/* Konten kanan */}
@@ -69,12 +60,12 @@ const DashboardPage = () => {
                             </div>
                             <div>
                                 <h2 className="text-2xl font-bold text-gray-800">
-                                    {activeTab === 'main' ? 'Dashboard Overview' : 'List of Values Management'}
+                                    {activeTab === 'main' ? 'Dashboard' : 'Manajemen List'}
                                 </h2>
                                 <p className="text-sm text-gray-500">
                                     {activeTab === 'main'
-                                        ? 'Monitor and manage your system users'
-                                        : 'Configure system values and parameters'
+                                        ? 'Pantau aktivitas dan pengelolaan pengguna sistem'
+                                        : 'Pengaturan untuk mengelola data referensi'
                                     }
                                 </p>
                             </div>
@@ -87,7 +78,7 @@ const DashboardPage = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                             <span className="text-green-600 font-medium">
-                                {activeTab === 'main' ? 'Dashboard' : 'List of Values'}
+                                {activeTab === 'main' ? 'Dashboard' : 'Daftar Nilai'}
                             </span>
                         </div>
                     </div>

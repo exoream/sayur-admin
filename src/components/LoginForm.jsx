@@ -82,7 +82,7 @@ const LoginForm = () => {
 
                     {/* Email Field */}
                     <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-semibold mb-3">Email Address</label>
+                        <label className="block text-gray-700 text-sm font-semibold mb-3">Email</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,20 +165,20 @@ const LoginForm = () => {
                     </button>
 
                     {/* Footer */}
-                    {/* <div className="mt-6 text-center">
+                    <div className="mt-6 text-center">
                         <p className="text-sm text-gray-600">
                             Butuh bantuan?
                             <a href="#" className="text-green-600 hover:text-green-700 font-medium ml-1 hover:underline transition-colors duration-200">
                                 Hubungi Support
                             </a>
                         </p>
-                    </div> */}
+                    </div>
                 </div>
 
                 {/* Bottom Text */}
                 <div className="mt-6 text-center">
                     <p className="text-sm text-gray-500">
-                        © 2025 Admin Portal. Semua hak dilindungi.
+                        © 2024 Admin Portal. Semua hak dilindungi.
                     </p>
                 </div>
             </div>
