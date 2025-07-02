@@ -83,7 +83,6 @@ const LovItemPage = () => {
 
         if (confirm.isConfirmed) {
             try {
-                const token = localStorage.getItem('token');
                 setIsSubmitting(true);
                 const res = await fetch(`https://sayur-one.vercel.app/lov-items/${id}`, {
                     method: 'DELETE', headers: {
@@ -124,7 +123,6 @@ const LovItemPage = () => {
         if (file) form.append('photo', file);
 
         try {
-            const token = localStorage.getItem('token');
             const url = selectedItem ? `https://sayur-one.vercel.app/lov-items/${selectedItem.id}` : 'https://sayur-one.vercel.app/lov-items';
             const method = selectedItem ? 'PUT' : 'POST';
 
@@ -197,7 +195,7 @@ const LovItemPage = () => {
                                         ? 'bg-green-100 text-green-800'
                                         : 'bg-blue-100 text-blue-800'
                                         }`}>
-                                        {item.type}
+                                        {item.type === 'VEGETABLES' ? 'SAYURAN' : 'LAINNYA'}
                                     </span>
                                 </div>
                                 <div className="flex gap-2">
@@ -230,7 +228,7 @@ const LovItemPage = () => {
                         </div>
                         <form onSubmit={handleSubmit} className="p-6 space-y-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">Nama</label>
                                 <input
                                     type="text"
                                     value={formData.name}
@@ -240,18 +238,18 @@ const LovItemPage = () => {
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Type</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">Tipe</label>
                                 <select
                                     value={formData.type}
                                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                                     className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                 >
-                                    <option value="VEGETABLES">VEGETABLES</option>
-                                    <option value="OTHERS">OTHERS</option>
+                                    <option value="VEGETABLES">SAYURAN</option>
+                                    <option value="OTHERS">LAINNYA</option>
                                 </select>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Photo</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">Foto</label>
                                 <input
                                     type="file"
                                     accept="image/*"
