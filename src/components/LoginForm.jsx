@@ -178,7 +178,7 @@ const LoginForm = () => {
                 {/* Bottom Text */}
                 <div className="mt-6 text-center">
                     <p className="text-sm text-gray-500">
-                        © 2024 Admin Portal. Semua hak dilindungi.
+                        © 2025 Admin Portal. Semua hak dilindungi.
                     </p>
                 </div>
             </div>
