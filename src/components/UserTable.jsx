@@ -226,6 +226,7 @@ const UserTable = () => {
                                                                                                 <tr className="border-b border-green-200">
                                                                                                     <th className="text-left py-2 text-gray-600 font-medium">Kuantitas</th>
                                                                                                     <th className="text-left py-2 text-gray-600 font-medium">Harga/Kg</th>
+                                                                                                    <th className="text-left py-2 text-gray-600 font-medium">Tanggal</th>
                                                                                                     <th className="text-right py-2 text-gray-600 font-medium">Total</th>
                                                                                                 </tr>
                                                                                             </thead>
@@ -234,6 +235,14 @@ const UserTable = () => {
                                                                                                     <tr key={detailIdx} className="border-b border-green-100 last:border-b-0">
                                                                                                         <td className="py-2 text-gray-700">{detail.quantityKg} Kg</td>
                                                                                                         <td className="py-2 text-gray-700">{formatCurrency(detail.pricePerKg)}</td>
+                                                                                                        <td className="py-2 text-gray-700">
+                                                                                                            {new Date(detail.date).toLocaleDateString('id-ID', {
+                                                                                                                day: 'numeric',
+                                                                                                                month: 'long',
+                                                                                                                year: 'numeric',
+                                                                                                                timeZone: 'Asia/Jakarta'
+                                                                                                            })}
+                                                                                                        </td>
                                                                                                         <td className="py-2 text-right font-medium text-green-600">{formatCurrency(detail.totalPrice)}</td>
                                                                                                     </tr>
                                                                                                 ))}
@@ -292,7 +301,19 @@ const UserTable = () => {
                                                                                             <div>
                                                                                                 <p className="text-sm text-red-800 font-semibold">Catatan:</p>
                                                                                                 <p className="text-sm text-red-700 mt-1">{expense.note}</p>
+                                                                                                {expense.date && (
+                                                                                                    <p className="text-xs text-red-600 mt-2">
+                                                                                                        Dicatat pada:{" "}
+                                                                                                        {new Date(expense.date).toLocaleDateString('id-ID', {
+                                                                                                            day: 'numeric',
+                                                                                                            month: 'long',
+                                                                                                            year: 'numeric',
+                                                                                                            timeZone: 'Asia/Jakarta'
+                                                                                                        })}
+                                                                                                    </p>
+                                                                                                )}
                                                                                             </div>
+
                                                                                         </div>
                                                                                     </div>
                                                                                 )}
@@ -303,6 +324,7 @@ const UserTable = () => {
                                                                                                 <tr className="border-b border-red-200">
                                                                                                     <th className="text-left py-2 text-gray-600 font-medium">Kuantitas</th>
                                                                                                     <th className="text-left py-2 text-gray-600 font-medium">Harga Beli/Kg</th>
+                                                                                                    <th className="text-left py-2 text-gray-600 font-medium">Tanggal</th>
                                                                                                     <th className="text-right py-2 text-gray-600 font-medium">Total</th>
                                                                                                 </tr>
                                                                                             </thead>
@@ -311,6 +333,14 @@ const UserTable = () => {
                                                                                                     <tr key={detailIdx} className="border-b border-red-100 last:border-b-0">
                                                                                                         <td className="py-2 text-gray-700">{detail.quantityKg} Kg</td>
                                                                                                         <td className="py-2 text-gray-700">{formatCurrency(detail.pricePerKg)}</td>
+                                                                                                        <td className="py-2 text-gray-700">
+                                                                                                            {new Date(detail.date).toLocaleDateString('id-ID', {
+                                                                                                                day: 'numeric',
+                                                                                                                month: 'long',
+                                                                                                                year: 'numeric',
+                                                                                                                timeZone: 'Asia/Jakarta'
+                                                                                                            })}
+                                                                                                        </td>
                                                                                                         <td className="py-2 text-right font-medium text-red-600">{formatCurrency(detail.totalPrice)}</td>
                                                                                                     </tr>
                                                                                                 ))}
