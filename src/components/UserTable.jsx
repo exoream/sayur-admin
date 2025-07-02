@@ -225,7 +225,7 @@ const UserTable = () => {
                                                                                             <thead>
                                                                                                 <tr className="border-b border-green-200">
                                                                                                     <th className="text-left py-2 text-gray-600 font-medium">Kuantitas</th>
-                                                                                                    <th className="text-left py-2 text-gray-600 font-medium">Harga/Kg</th>
+                                                                                                    <th className="text-left py-2 text-gray-600 font-medium">Harga Jual/Kg</th>
                                                                                                     <th className="text-left py-2 text-gray-600 font-medium">Tanggal</th>
                                                                                                     <th className="text-right py-2 text-gray-600 font-medium">Total</th>
                                                                                                 </tr>
@@ -240,7 +240,7 @@ const UserTable = () => {
                                                                                                                 day: 'numeric',
                                                                                                                 month: 'long',
                                                                                                                 year: 'numeric',
-                                                                                                                timeZone: 'Asia/Jakarta'
+                                                                                                                timeZone: 'Asia/Makassar'
                                                                                                             })}
                                                                                                         </td>
                                                                                                         <td className="py-2 text-right font-medium text-green-600">{formatCurrency(detail.totalPrice)}</td>
@@ -308,7 +308,7 @@ const UserTable = () => {
                                                                                                             day: 'numeric',
                                                                                                             month: 'long',
                                                                                                             year: 'numeric',
-                                                                                                            timeZone: 'Asia/Jakarta'
+                                                                                                            timeZone: 'Asia/Makassar'
                                                                                                         })}
                                                                                                     </p>
                                                                                                 )}
@@ -338,7 +338,7 @@ const UserTable = () => {
                                                                                                                 day: 'numeric',
                                                                                                                 month: 'long',
                                                                                                                 year: 'numeric',
-                                                                                                                timeZone: 'Asia/Jakarta'
+                                                                                                                timeZone: 'Asia/Makassar'
                                                                                                             })}
                                                                                                         </td>
                                                                                                         <td className="py-2 text-right font-medium text-red-600">{formatCurrency(detail.totalPrice)}</td>
