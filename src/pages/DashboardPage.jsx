@@ -8,11 +8,27 @@ import Header from '../components/Header';
 const DashboardPage = () => {
     const [activeTab, setActiveTab] = useState('main');
 
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        const expiryTime = localStorage.getItem('token_expiry');
+
+        if (token && expiryTime) {
+            const now = new Date().getTime();
+            if (now > parseInt(expiryTime, 10)) {
+                localStorage.removeItem('token');
+                localStorage.removeItem('token_expiry');
+                localStorage.removeItem('email');
+                window.location.href = '/';
+            }
+        }
+    }, []);
+
     const handleLogout = () => {
         // Tambahkan logika logout di sini
         // Misalnya hapus token dari localStorage dan redirect
         localStorage.removeItem('token');
         localStorage.removeItem('email');
+        localStorage.removeItem('token_expiry');
         window.location.href = '/';
     };
 
