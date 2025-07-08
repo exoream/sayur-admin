@@ -83,6 +83,7 @@ const LovItemPage = () => {
 
         if (confirm.isConfirmed) {
             try {
+                const token = localStorage.getItem('token');
                 setIsSubmitting(true);
                 const res = await fetch(`https://sayur-one.vercel.app/lov-items/${id}`, {
                     method: 'DELETE', headers: {
@@ -125,7 +126,7 @@ const LovItemPage = () => {
         try {
             const url = selectedItem ? `https://sayur-one.vercel.app/lov-items/${selectedItem.id}` : 'https://sayur-one.vercel.app/lov-items';
             const method = selectedItem ? 'PUT' : 'POST';
-
+            const token = localStorage.getItem('token');
             const res = await fetch(url, {
                 method,
                 headers: {
