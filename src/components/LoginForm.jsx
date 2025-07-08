@@ -43,8 +43,11 @@ const LoginForm = () => {
                     throw new Error('Bukan admin');
                 }
 
+                const expiryTime = new Date().getTime() + 12 * 60 * 60 * 1000;
+
                 // Simpan ke localStorage jika role valid
                 localStorage.setItem('token', token);
+                localStorage.setItem('token_expiry', expiryTime);
                 localStorage.setItem('email', userEmail);
 
                 // (opsional) Redirect atau lanjut
