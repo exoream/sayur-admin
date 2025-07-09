@@ -14,7 +14,7 @@ const LovItemPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
-    const [formData, setFormData] = useState({ name: '', type: 'VEGETABLES', file: null });
+    const [formData, setFormData] = useState({ name: '', type: 'VEGETABLE', file: null });
     const [previewUrl, setPreviewUrl] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -46,10 +46,10 @@ const LovItemPage = () => {
 
     useEffect(() => {
         if (selectedItem) {
-            setFormData({ name: selectedItem.name || '', type: selectedItem.type || 'VEGETABLES', file: null });
+            setFormData({ name: selectedItem.name || '', type: selectedItem.type || 'VEGETABLE', file: null });
             setPreviewUrl(selectedItem.photo || '');
         } else {
-            setFormData({ name: '', type: 'VEGETABLES', file: null });
+            setFormData({ name: '', type: 'VEGETABLE', file: null });
             setPreviewUrl('');
         }
     }, [selectedItem]);
@@ -192,11 +192,11 @@ const LovItemPage = () => {
                             <div className="p-4">
                                 <h3 className="text-lg font-semibold text-gray-800 mb-1">{item.name}</h3>
                                 <div className="flex items-center gap-2 mb-4">
-                                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${item.type === 'VEGETABLES'
+                                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${item.type === 'VEGETABLE'
                                         ? 'bg-green-100 text-green-800'
                                         : 'bg-blue-100 text-blue-800'
                                         }`}>
-                                        {item.type === 'VEGETABLES' ? 'SAYURAN' : 'LAINNYA'}
+                                        {item.type === 'VEGETABLE' ? 'SAYURAN' : 'LAINNYA'}
                                     </span>
                                 </div>
                                 <div className="flex gap-2">
@@ -245,8 +245,8 @@ const LovItemPage = () => {
                                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                                     className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                 >
-                                    <option value="VEGETABLES">SAYURAN</option>
-                                    <option value="OTHERS">LAINNYA</option>
+                                    <option value="VEGETABLE">SAYURAN</option>
+                                    <option value="OTHER">LAINNYA</option>
                                 </select>
                             </div>
                             <div>
