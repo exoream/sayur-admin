@@ -1,5 +1,5 @@
 // src/pages/DashboardPage.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DashboardTabs from '../components/DashboardTabs';
 import UserTable from '../components/UserTable';
 import LovItemPage from './ListOfValuePage';
